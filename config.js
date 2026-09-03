@@ -1,6 +1,6 @@
 export const festivalConfig = {
   organizationName: 'बाल नवयुवक संघ',
-  templeName: 'श्री राधा-कृष्ण मंदिर',
+  templeName: 'शिव मंदिर',
   festivalName: 'श्री कृष्ण जन्माष्टमी महोत्सव',
   village: 'लोहरसी',
 post: 'लोहरसी',
