@@ -38,7 +38,17 @@ updateCountdown(); setInterval(updateCountdown, 1000);
 
 const modalBackdrop = $('[data-modal]');
 const contactActions = $('.contact-actions');
+const contactNote = $('.contact-note');
 if (contactActions) {
+	const matkaCopy = $('#matka .section-copy');
+	if (matkaCopy) {
+		const contactHeading = document.createElement('h3');
+		contactHeading.textContent = 'पंजीकरण के लिए संपर्क करें';
+		contactHeading.className = 'contact-heading';
+		matkaCopy.append(contactHeading);
+		if (contactNote) matkaCopy.append(contactNote);
+		matkaCopy.append(contactActions);
+	}
 	contactActions.style.display = 'grid';
 	contactActions.style.gap = '9px';
 }
