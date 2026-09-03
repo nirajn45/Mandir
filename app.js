@@ -1,4 +1,4 @@
-import { festivalConfig, teamMembers, galleryImages } from './config.js';
+import { festivalConfig, teamMembers, galleryVideos } from './config.js';
 
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
@@ -30,13 +30,18 @@ team.addEventListener('mouseenter', () => clearInterval(memberTimer));
 team.addEventListener('mouseleave', () => { memberTimer = setInterval(() => showMember(memberIndex + 2), 4200); });
 window.addEventListener('resize', () => showMember(memberIndex));
 const gallery = $('[data-gallery]');
-galleryImages.forEach(image => gallery.insertAdjacentHTML('beforeend', `<button class="gallery-item ${image.size}" data-gallery-image="${image.src}" data-gallery-alt="${image.alt}"><img src="${image.src}" alt="${image.alt}" loading="lazy"></button>`));
+galleryVideos.forEach(video => gallery.insertAdjacentHTML('beforeend', `<div class="gallery-item ${video.size}"><video src="${video.src}" aria-label="${video.alt}" style="width:100%;height:100%;object-fit:cover;display:block" autoplay muted loop playsinline preload="metadata"></video></div>`));
 
 const targetDate = new Date(festivalConfig.countdownDate).getTime();
 function updateCountdown() { let remaining = Math.max(0, targetDate - Date.now()); const days = Math.floor(remaining / 86400000); remaining %= 86400000; const hours = Math.floor(remaining / 3600000); remaining %= 3600000; const minutes = Math.floor(remaining / 60000); const seconds = Math.floor((remaining % 60000) / 1000); [['days',days],['hours',hours],['minutes',minutes],['seconds',seconds]].forEach(([unit,value]) => { const node = $(`[data-unit="${unit}"]`); if (node) node.textContent = String(value).padStart(2,'0'); }); }
 updateCountdown(); setInterval(updateCountdown, 1000);
 
 const modalBackdrop = $('[data-modal]');
+const contactActions = $('.contact-actions');
+if (contactActions) {
+	contactActions.style.display = 'grid';
+	contactActions.style.gap = '9px';
+}
 $('[data-open-modal]').addEventListener('click', () => { modalBackdrop.classList.add('open'); document.body.style.overflow='hidden'; });
 $('[data-close-modal]').addEventListener('click', closeModal); modalBackdrop.addEventListener('click', event => { if (event.target === modalBackdrop) closeModal(); });
 function closeModal() { modalBackdrop.classList.remove('open'); document.body.style.overflow=''; }

@@ -26,10 +26,8 @@ export const teamMembers = [
   { name: 'विवेक पाण्डेय', role: 'उपकोषाध्यक्ष', image: '/assets/vivek.jpeg', description: 'उत्सव की तैयारियों में जिम्मेदारी और समर्पण।' }
 ];
 
-export const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1535568426811-3f7e3f7f6fcb?auto=format&fit=crop&w=1000&q=85', alt: 'मंदिर की रोशनी', size: 'wide' },
-  { src: 'https://images.unsplash.com/photo-1604608672516-f1b9f6b5f9c8?auto=format&fit=crop&w=700&q=85', alt: 'उत्सव की सजावट', size: 'tall' },
-  { src: 'https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?auto=format&fit=crop&w=700&q=85', alt: 'दीप और फूल', size: 'square' },
-  { src: 'https://images.unsplash.com/photo-1567591414240-e9c1e608e2b8?auto=format&fit=crop&w=1000&q=85', alt: 'मंदिर उत्सव', size: 'wide' },
-  { src: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=85', alt: 'पारंपरिक प्रसाद', size: 'square' }
+export const galleryVideos = [
+  { src: 'https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAumkV7CJEPAQqnC12uOHom7fzUGSs6pKMrEYgjk', alt: 'पिछले वर्ष की झलक', size: 'wide' },
+  { src: 'https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAum2i7mMBWvT53OZ1aHF8mkfdPiU0cDoMlRG9zL', alt: 'पिछले वर्ष का उत्सव', size: 'tall' },
+  { src: 'https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAum3yDH3GwG5iRg3yAkdO07cshDnUBISQJ9XTCe', alt: 'पिछले वर्ष की यादें', size: 'square' }
 ];
